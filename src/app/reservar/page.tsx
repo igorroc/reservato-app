@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 import { PiMoon, PiSun, PiSunHorizon } from "react-icons/pi"
 
@@ -170,8 +171,9 @@ export default function Reservar() {
 
 				<button
 					type="submit"
-					className="bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 transition-all"
+					className="flex gap-2 items-center justify-center bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 transition-all"
 				>
+					<Image src="/images/icon.svg" width={16} height={16} alt="Logo da Reservato" />
 					Agendar horário
 				</button>
 			</form>

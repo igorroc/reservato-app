@@ -57,7 +57,7 @@ export default function Home() {
 				</Link>
 				<Link
 					href="/cadastrar"
-					className="bg-transparent hover:bg-blue-600 text-black text-center font-bold rounded-lg p-4 w-96 mt-4 border-2 border-black hover:bg-blue-600 hover:text-white hover:border-transparent transition-all"
+					className="bg-transparent text-black text-center font-bold rounded-lg p-4 w-96 mt-4 border-2 border-black hover:bg-blue-600 hover:text-white hover:border-transparent transition-all"
 				>
 					Quero me cadastrar
 				</Link>

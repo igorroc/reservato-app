@@ -1,4 +1,4 @@
-import { formatDate, formatDuration } from "@/utils/formatters"
+import { formatDate, formatDuration, formatPrice } from "@/utils/formatters"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
@@ -96,7 +96,7 @@ export default function Admin({ params }: PageProps) {
 									})}
 								</span>
 							</div>
-							<span>{service.price}</span>
+							<span>{formatPrice(service.price)}</span>
 						</div>
 					))}
 				</div>

@@ -37,3 +37,7 @@ export function formatDate(date: string) {
 
 	return `${day}/${month}/${year}`
 }
+
+export function formatPrice(price: number) {
+	return price.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+}

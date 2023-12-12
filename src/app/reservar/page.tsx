@@ -1,3 +1,4 @@
+import Header from "@/components/Header"
 import { formatDuration } from "@/utils/formatters"
 import Image from "next/image"
 import React from "react"
@@ -73,7 +74,7 @@ export default function Reservar() {
 
 	return (
 		<div className="flex flex-col p-12 md:p-24">
-			<p className="mb-4">HEADER</p>
+			<Header title="Agendamentos" back={false} />
 			<form action="" className="flex flex-col gap-8">
 				<div className="flex flex-col gap-2">
 					<label htmlFor="">Selecione o serviço</label>

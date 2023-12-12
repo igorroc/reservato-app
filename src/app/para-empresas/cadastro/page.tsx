@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { FormEvent, useState } from "react"
+import { toast } from "react-toastify"
 
 export default function Cadastro() {
 	const [step, setStep] = useState(1)
@@ -17,6 +18,8 @@ export default function Cadastro() {
 		const payload = Object.fromEntries(data.entries())
 
 		console.log(payload)
+
+		toast.success("Conta criada com sucesso!")
 	}
 
 	// qual o tipo typescript para o evento de submit?

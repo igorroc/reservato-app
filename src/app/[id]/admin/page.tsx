@@ -4,6 +4,7 @@ import Link from "next/link"
 import React from "react"
 import { PiPlus } from "react-icons/pi"
 import { MdKeyboardDoubleArrowDown } from "react-icons/md"
+import Header from "@/components/Header"
 
 type PageProps = {
 	params: {
@@ -54,7 +55,7 @@ export default function Admin({ params }: PageProps) {
 
 	return (
 		<div className="flex flex-col p-6 md:p-12 max-w-2xl mx-auto">
-			<p className="mb-4">HEADER</p>
+			<Header title="Perfil da Empresa" back={false} />
 			<div className="flex justify-between items-center">
 				<div className="flex items-center gap-2">
 					<div className="bg-black">

@@ -1,4 +1,5 @@
 "use client"
+import Header from "@/components/Header"
 import { useRouter } from "next/navigation"
 import { useState, FormEvent } from "react"
 import { toast } from "react-toastify"
@@ -21,7 +22,7 @@ export default function AddService() {
 
 	return (
 		<div className="flex flex-col p-6 md:p-12 max-w-2xl mx-auto">
-			<p className="mb-4">HEADER</p>
+			<Header title="Adicionar Serviço" />
 			<form className="flex flex-col gap-4" onSubmit={handleSubmit}>
 				<div className="flex flex-col w-full gap-2">
 					<label htmlFor="name">Nome do Serviço</label>

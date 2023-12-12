@@ -1,8 +1,9 @@
-import { formatDate, formatDuration, formatPrice } from "@/utils/formatters"
+import { formatDuration, formatPrice } from "@/utils/formatters"
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { PiPlus } from "react-icons/pi"
+import { MdKeyboardDoubleArrowDown } from "react-icons/md"
 
 type PageProps = {
 	params: {
@@ -99,6 +100,11 @@ export default function Admin({ params }: PageProps) {
 							<span>{formatPrice(service.price)}</span>
 						</div>
 					))}
+					<div className="bg-blue-500 text-white flex items-center justify-center gap-2 p-2 cursor-pointer hover:bg-blue-600 transition-all">
+						<MdKeyboardDoubleArrowDown />
+						Ver mais
+						<MdKeyboardDoubleArrowDown />
+					</div>
 				</div>
 			</div>
 
@@ -124,6 +130,11 @@ export default function Admin({ params }: PageProps) {
 							</div>
 						</div>
 					))}
+					<div className="bg-blue-500 text-white flex items-center justify-center gap-2 p-2 cursor-pointer hover:bg-blue-600 transition-all">
+						<MdKeyboardDoubleArrowDown />
+						Ver mais
+						<MdKeyboardDoubleArrowDown />
+					</div>
 				</div>
 			</div>
 		</div>

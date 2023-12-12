@@ -1,11 +1,14 @@
 "use client"
 
 import Image from "next/image"
+import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
 import { toast } from "react-toastify"
 
 export default function Cadastro() {
 	const [step, setStep] = useState(1)
+	const router = useRouter()
+
 	const nichos = ["Salão de Beleza", "Barbearia"]
 
 	function nextStep() {
@@ -20,6 +23,8 @@ export default function Cadastro() {
 		console.log(payload)
 
 		toast.success("Conta criada com sucesso!")
+
+		router.push("/123123/admin")
 	}
 
 	// qual o tipo typescript para o evento de submit?

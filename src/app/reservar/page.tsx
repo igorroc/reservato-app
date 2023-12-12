@@ -1,3 +1,4 @@
+import { formatDuration } from "@/utils/formatters"
 import Image from "next/image"
 import React from "react"
 import { PiMoon, PiSun, PiSunHorizon } from "react-icons/pi"
@@ -69,25 +70,6 @@ export default function Reservar() {
 			available: true,
 		},
 	]
-
-	function formatDuration(duration: string) {
-		const [hours, minutes, seconds] = duration.split(":").map(Number)
-		const formatted = []
-
-		if (hours > 0) {
-			formatted.push(`${hours}h`)
-		}
-
-		if (minutes > 0) {
-			formatted.push(`${minutes}min`)
-		}
-
-		if (seconds > 0) {
-			formatted.push(`${seconds}s`)
-		}
-
-		return formatted.join(" ")
-	}
 
 	return (
 		<div className="flex flex-col p-12 md:p-24">

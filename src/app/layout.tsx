@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Red_Hat_Display } from "next/font/google"
 import "./globals.css"
 import { ToastContainer } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const pageFont = Red_Hat_Display({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: "Reservato | O Futuro dos Agendamentos Online",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="pt-br">
-			<body className={inter.className}>
+			<body className={pageFont.className}>
 				{children}
 
 				<ToastContainer />

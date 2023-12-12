@@ -56,8 +56,8 @@ export default function Home() {
 					Quero agendar um horário
 				</Link>
 				<Link
-					href="/cadastrar"
-					className="bg-transparent text-black text-center font-bold rounded-lg p-4 w-96 mt-4 border-2 border-black hover:bg-blue-600 hover:text-white hover:border-transparent transition-all"
+					href="/para-empresas/cadastro"
+					className="bg-transparent text-black text-center font-bold rounded-lg p-4 w-96 mt-4 border-2 border-black hover:bg-blue-500 hover:text-white hover:border-transparent transition-all"
 				>
 					Quero me cadastrar
 				</Link>

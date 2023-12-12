@@ -89,7 +89,7 @@ export default function Reservar() {
 								/>
 								<label
 									htmlFor={service.id}
-									className="flex flex-col p-2 rounded-xl items-center bg-white text-black peer-checked:bg-blue-500 peer-checked:text-white transition-all cursor-pointer"
+									className="flex flex-col p-2 rounded-xl items-center bg-white text-black peer-checked:bg-blue-500 peer-checked:text-white transition-all cursor-pointer hover:bg-gray-200"
 								>
 									<span>{service.name}</span>
 									<span>{formatDuration(service.duration)}</span>
@@ -114,7 +114,7 @@ export default function Reservar() {
 									htmlFor={turn.id}
 									className={`flex flex-col gap-4 p-4 rounded-xl items-center bg-white text-black peer-checked:bg-blue-500 peer-checked:text-white ${
 										turn.available
-											? "cursor-pointer"
+											? "cursor-pointer hover:bg-gray-200"
 											: "cursor-not-allowed opacity-50"
 									} transition-all`}
 								>
@@ -141,9 +141,9 @@ export default function Reservar() {
 									htmlFor={time.id}
 									className={`flex flex-col p-2 px-8 rounded-xl items-center bg-white text-black peer-checked:bg-blue-500 peer-checked:text-white ${
 										time.available
-											? "cursor-pointer"
+											? "cursor-pointer hover:bg-gray-200"
 											: "cursor-not-allowed opacity-50"
-									} transition-all `}
+									} transition-all`}
 								>
 									<span>{time.time}</span>
 								</label>

@@ -1,0 +1,29 @@
+[
+	{
+		"id": 123,
+		"name": "Ateliê de Beleza Érika Rocha",
+		"description": "Salão de beleza especializado em cabelos cacheados e crespos. Trabalhamos com produtos de qualidade e profissionais capacitados.",
+		"services": [
+			{
+				"id": 1,
+				"name": "Corte de Cabelo",
+				"price": 50.0
+			},
+			{
+				"id": 2,
+				"name": "Manicure",
+				"price": 30.0
+			},
+			{
+				"id": 3,
+				"name": "Pedicure",
+				"price": 30.0
+			},
+			{
+				"id": 4,
+				"name": "Sobrancelha",
+				"price": 20.0
+			}
+		]
+	}
+]

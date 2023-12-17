@@ -1,10 +1,25 @@
+"use client"
+
 import Header from "@/components/Header"
 import { formatDuration } from "@/utils/formatters"
 import Image from "next/image"
-import React from "react"
+import React, { useState } from "react"
 import { PiMoon, PiSun, PiSunHorizon } from "react-icons/pi"
+import { toast } from "react-toastify"
+import { useRouter } from "next/navigation"
 
-export default function Reservar() {
+type PageProps = {
+	params: {
+		id: string
+	}
+}
+
+export default function Reservar({ params: { id } }: PageProps) {
+	const [selectedService, setSelectedService] = useState<string | null>(null)
+	const [selectedTurn, setSelectedTurn] = useState<string | null>(null)
+	const [selectedTime, setSelectedTime] = useState<string | null>(null)
+	const router = useRouter()
+
 	const services = [
 		{
 			id: "corte_cabelo_curto",
@@ -72,10 +87,44 @@ export default function Reservar() {
 		},
 	]
 
+	function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+		event.preventDefault()
+
+		const data = {
+			service: selectedService,
+			turn: selectedTurn,
+			time: selectedTime,
+			company: id,
+		}
+
+		console.log(data)
+
+		fetch(`/api/schedule`, {
+			method: "POST",
+			body: JSON.stringify(data),
+		})
+
+		toast.success("Agendamento realizado com sucesso!")
+
+		router.push("/perfil")
+	}
+
+	const handleServiceChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSelectedService(event.target.id)
+	}
+
+	const handleTurnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSelectedTurn(event.target.id)
+	}
+
+	const handleTimeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setSelectedTime(event.target.id)
+	}
+
 	return (
 		<div className="flex flex-col p-12 md:p-24">
 			<Header title="Agendamentos" back={false} />
-			<form action="" className="flex flex-col gap-8">
+			<form onSubmit={handleSubmit} className="flex flex-col gap-8">
 				<div className="flex flex-col gap-2">
 					<label htmlFor="">Selecione o serviço</label>
 					<div className="flex gap-2 flex-wrap">
@@ -86,6 +135,9 @@ export default function Reservar() {
 									name="service"
 									id={service.id}
 									className="hidden peer"
+									required
+									checked={service.id === selectedService}
+									onChange={handleServiceChange}
 								/>
 								<label
 									htmlFor={service.id}
@@ -109,6 +161,9 @@ export default function Reservar() {
 									id={turn.id}
 									className="hidden peer"
 									disabled={!turn.available}
+									required
+									checked={turn.id === selectedTurn}
+									onChange={handleTurnChange}
 								/>
 								<label
 									htmlFor={turn.id}
@@ -125,7 +180,11 @@ export default function Reservar() {
 						))}
 					</div>
 				</div>
-				<div className="flex flex-col gap-2">
+				<div
+					className={`flex flex-col gap-2 ${
+						!selectedService || !selectedTurn ? "hidden" : ""
+					}`}
+				>
 					<label htmlFor="">Selecione o horário</label>
 					<div className="flex gap-2 flex-wrap">
 						{times.map((time) => (
@@ -136,6 +195,9 @@ export default function Reservar() {
 									id={time.id}
 									className="hidden peer"
 									disabled={!time.available}
+									required
+									checked={time.id === selectedTime}
+									onChange={handleTimeChange}
 								/>
 								<label
 									htmlFor={time.id}
@@ -154,7 +216,8 @@ export default function Reservar() {
 
 				<button
 					type="submit"
-					className="flex gap-2 items-center justify-center bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 transition-all"
+					className="flex gap-2 items-center justify-center bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+					disabled={!selectedService || !selectedTurn || !selectedTime}
 				>
 					<Image src="/images/icon.svg" width={16} height={16} alt="Logo da Reservato" />
 					Agendar horário

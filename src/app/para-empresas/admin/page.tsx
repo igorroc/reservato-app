@@ -6,13 +6,7 @@ import { PiPlus } from "react-icons/pi"
 import { MdKeyboardDoubleArrowDown } from "react-icons/md"
 import Header from "@/components/Header"
 
-type PageProps = {
-	params: {
-		id: string
-	}
-}
-
-export default function Admin({ params }: PageProps) {
+export default function Admin() {
 	const services = [
 		{
 			name: "Alisamento",
@@ -78,7 +72,7 @@ export default function Admin({ params }: PageProps) {
 				<div className="flex justify-between items-center">
 					<span>Serviços</span>
 					<Link
-						href={`/${params.id}/admin/adicionar-servico`}
+						href="/para-empresas/admin/adicionar-servico"
 						className="p-2 bg-blue-500 text-white rounded-xl hover:bg-blue-600 transition-all cursor-pointer"
 					>
 						<PiPlus size={20} />

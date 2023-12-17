@@ -16,7 +16,7 @@ export default function Home() {
 				</p>
 			</div>
 			<div className="flex items-center justify-items-center w-full overflow-x-auto">
-				<div className="flex items-center justify-self-center items-stretch overflow-x-auto gap-4 mt-4 w-full pb-4 snap-x snap-mandatory">
+				<div className="flex justify-self-center items-stretch overflow-x-auto gap-4 mt-4 w-full pb-4 snap-x snap-mandatory">
 					<div className="min-w-full md:min-w-max md:max-w-sm flex flex-col gap-3 p-4 justify-center bg-white shadow-xl rounded-xl snap-center">
 						<h2 className="text-xl text-bold">📅 Transforme seu calendário</h2>
 						<p className="md:max-w-sm">
@@ -50,7 +50,7 @@ export default function Home() {
 
 			<div className="flex flex-col items-center justify-center">
 				<Link
-					href="/login"
+					href="/erika/agendar"
 					className="bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 w-96 mt-4 transition-all"
 				>
 					Quero agendar um horário

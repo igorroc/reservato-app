@@ -24,7 +24,7 @@ export default function Cadastro() {
 
 		toast.success("Conta criada com sucesso!")
 
-		router.push("/123123/admin")
+		router.push("/para-empresas/admin")
 	}
 
 	// qual o tipo typescript para o evento de submit?

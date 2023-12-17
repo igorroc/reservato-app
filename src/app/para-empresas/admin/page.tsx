@@ -52,7 +52,7 @@ export default function Admin() {
 			<Header title="Perfil da Empresa" back={false} />
 			<div className="flex justify-between items-center">
 				<div className="flex items-center gap-2">
-					<div className="bg-black">
+					<div className="rounded-xl">
 						<Image
 							src="/images/atelie_erika.png"
 							alt="Logo da empresa"

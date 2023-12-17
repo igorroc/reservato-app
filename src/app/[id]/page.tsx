@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
+import { FcGoogle } from "react-icons/fc"
 
 type PageProps = {
 	params: {
@@ -24,9 +25,10 @@ export default function CompanyPage({ params: { id } }: PageProps) {
 				<p>Agende seus horários no conforto do seu celular</p>
 				<form action="" className="w-full flex flex-col gap-2 items-center justify-center">
 					<Link
+						className="w-full flex items-center justify-center gap-2 p-4 border-[1px] border-gray-500 hover:bg-blue-500 hover:border-transparent hover:text-white rounded-xl transition-all"
 						href={`${id}/agendar`}
-						className="w-full border-[1px] border-gray-500 rounded-xl py-2 text-center"
 					>
+						<FcGoogle size={32} />
 						Entrar com o Google
 					</Link>
 				</form>

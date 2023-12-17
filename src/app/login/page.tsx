@@ -12,7 +12,7 @@ export default function Login() {
 					Agende seus horários no conforto do seu celular
 				</p>
 				<Link
-					className="w-full flex items-center justify-center gap-2 p-4 border-2 border-black hover:bg-blue-500 hover:border-transparent hover:text-white rounded-xl transition-all"
+					className="w-full flex items-center justify-center gap-2 p-4 border-[1px] border-gray-500 hover:bg-blue-500 hover:border-transparent hover:text-white rounded-xl transition-all"
 					href="/perfil"
 				>
 					<FcGoogle size={32} />

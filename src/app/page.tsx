@@ -50,7 +50,7 @@ export default function Home() {
 
 			<div className="flex flex-col items-center justify-center">
 				<Link
-					href="/erika/agendar"
+					href="/erika"
 					className="bg-blue-500 hover:bg-blue-600 text-white text-center font-bold rounded-lg p-4 w-96 mt-4 transition-all"
 				>
 					Quero agendar um horário
